@@ -12,28 +12,36 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname, placeholder: "e.g. \"Kingslayer\""   %>
+  </div>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: "e.g. \"Lord of Winterfell\"" %>
+  </div>
+  <div class="field">
     <%= f.label :dob %><br />
     <%= f.date_select :dob %>
   </div>
   <div class="field">
-    <%= f.label :is_male %><br />
-    <%= f.check_box :is_male %>
+    <%= f.label :is_male %>
+    <%= f.select :is_male, [['Male',1], ['Female',0]] %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname %>
-  </div>
-  <div class="field">
-    <%= f.label :references %><br />
-    <%= f.text_field :references %>
+    <%= f.label :house %>
+    <%= f.collection_select :house_id, @houses, :id, :name, prompt: "Select a House" %>
   </div>
   <div class="actions">
     <%= f.submit %>

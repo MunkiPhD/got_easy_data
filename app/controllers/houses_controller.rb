@@ -14,6 +14,7 @@ class HousesController < ApplicationController
   # GET /houses/1.json
   def show
     @house = House.find(params[:id])
+    @characters = @house.characters.select([:id, :first_name, :last_name]).all
 
     respond_to do |format|
       format.html # show.html.erb

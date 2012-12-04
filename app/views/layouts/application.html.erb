@@ -12,20 +12,23 @@
     <%= link_to "got_easy_data", root_path, class: "brand" %>
     <ul class="nav">
       <li class="divider-vertical"></li>
-      <li><%= link_to "Characters", "#"%></li>
-      <li><%= link_to "Houses", "#"%></li>
+      <li><%= link_to "Characters", characters_path%></li>
+      <li><%= link_to "Houses", houses_path%></li>
+      <li><%= link_to "Orders", orders_path%></li>
     </ul>
   </div>
 </div>
 <div class="container-fluid">
   <div class="row-fluid">
+    <!--
     <div class="span2 sidebar-links">
       <ul>
         <li>Characters</li>
         <li>Houses</li>
       </ul>
     </div>
-    <div class="span10">
+-->
+    <div class="span12">
       <%= render_flash_messages %>
       <%= yield %>
     </div>

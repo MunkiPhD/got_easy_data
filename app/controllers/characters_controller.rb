@@ -25,6 +25,7 @@ class CharactersController < ApplicationController
   # GET /characters/new.json
   def new
     @character = Character.new
+    @houses = House.select([:name, :id]).all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class CharactersController < ApplicationController
   # GET /characters/1/edit
   def edit
     @character = Character.find(params[:id])
+    @houses = House.select([:name, :id]).all
   end
 
   # POST /characters
@@ -44,7 +46,7 @@ class CharactersController < ApplicationController
 
     respond_to do |format|
       if @character.save
-        format.html { redirect_to @character, notice: 'Character was successfully created.' }
+        format.html { redirect_to @character, success: 'Character was successfully created.' }
         format.json { render json: @character, status: :created, location: @character }
       else
         format.html { render action: "new" }
@@ -60,7 +62,7 @@ class CharactersController < ApplicationController
 
     respond_to do |format|
       if @character.update_attributes(params[:character])
-        format.html { redirect_to @character, notice: 'Character was successfully updated.' }
+        format.html { redirect_to @character, success: 'Character was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

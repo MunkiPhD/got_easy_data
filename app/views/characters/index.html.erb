@@ -1,13 +1,12 @@
 <h1>Listing characters</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
-    <th>Dob</th>
-    <th>Is male</th>
-    <th>Email</th>
+    <th>Name</th>
     <th>Title</th>
+    <th>Email</th>
     <th>Nickname</th>
-    <th>References</th>
+    <th>House</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,12 +14,11 @@
 
 <% @characters.each do |character| %>
   <tr>
-    <td><%= character.dob %></td>
-    <td><%= character.is_male %></td>
-    <td><%= character.email %></td>
+    <td><%= link_to character.full_name, character %></td>
     <td><%= character.title %></td>
+    <td><%= character.email %></td>
     <td><%= character.nickname %></td>
-    <td><%= character.references %></td>
+    <td><%= link_to character.house.name, character.house %></td>
     <td><%= link_to 'Show', character %></td>
     <td><%= link_to 'Edit', edit_character_path(character) %></td>
     <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Character', new_character_path %>
+<%= link_to 'New Character', new_character_path, class: "btn btn-primary" %>

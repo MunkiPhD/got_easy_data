@@ -1,13 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<h2>House <%= @house.name %></h2>
 <p>
-  <b>Name:</b>
-  <%= @house.name %>
-</p>
-
-<p>
-  <b>Motto:</b>
-  <%= @house.motto %>
+<em><%= @house.motto %></em>
 </p>
 
 <p>
@@ -19,6 +12,17 @@
   <b>Seat:</b>
   <%= @house.seat %>
 </p>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @characters.each do |character| %>
+    <tr>
+    <td><%= link_to character.full_name, character %></td>
+  </tr>
+  <% end %>
+</table>
 
 
 <%= link_to 'Edit', edit_house_path(@house) %> |
