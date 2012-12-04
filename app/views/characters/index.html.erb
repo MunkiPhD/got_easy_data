@@ -2,12 +2,11 @@
 
 <table class="table table-striped">
   <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Nickname</th>
-    <th>House</th>
-    <th>Order</th>
-    <th></th>
+    <th><i class="icon-user"></i>&nbsp;Name</th>
+    <th><i class="icon-certificate"></i>&nbsp;Title</th>
+    <th><i class="icon-asterisk"></i>&nbsp;Nickname</th>
+    <th><i class="icon-home"></i>&nbsp;House</th>
+    <th><i class="icon-cog"></i>&nbsp;Order</th>
     <th></th>
   </tr>
 
@@ -18,12 +17,16 @@
     <td><%= character.nickname %></td>
     <td><%= link_to character.house.name, character.house %></td>
     <td><%= link_to(character.order.name, character.order) unless character.order.blank? %></td>
-    <td><%= link_to 'Edit', edit_character_path(character) %></td>
-    <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td style="width:78px;">
+      <%= link_to raw('<i class="icon-pencil"></i>'), edit_character_path(character), class: 'btn btn-small pull-left' %>
+    <%= link_to raw('<i class="icon-remove"></i>'), character, class: 'btn btn-small close pull-left', method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Character', new_character_path, class: "btn btn-primary" %>
+<%= link_to new_character_path, class: "btn btn-primary" do %>
+  <i class="icon-plus icon-white"></i>
+  New Character
+<% end %>
