@@ -1,6 +1,6 @@
 <h1>Listing characters</h1>
 
-<table class="table table-striped">
+<table class="table table-striped sortable">
   <tr>
     <th><i class="icon-user"></i>&nbsp;Name</th>
     <th><i class="icon-certificate"></i>&nbsp;Title</th>
@@ -9,9 +9,8 @@
     <th><i class="icon-cog"></i>&nbsp;Order</th>
     <th></th>
   </tr>
-
-<% @characters.each do |character| %>
-  <tr>
+  <% @characters.each do |character| %>
+    <tr>
     <td><%= link_to character.full_name, character %></td>
     <td><%= character.title %></td>
     <td><%= character.nickname %></td>
@@ -19,7 +18,7 @@
     <td><%= link_to(character.order.name, character.order) unless character.order.blank? %></td>
     <td style="width:78px;">
       <%= link_to raw('<i class="icon-pencil"></i>'), edit_character_path(character), class: 'btn btn-small pull-left' %>
-    <%= link_to raw('<i class="icon-remove"></i>'), character, class: 'btn btn-small close pull-left', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%= link_to raw('<i class="icon-remove"></i>'), character, class: 'btn btn-small close pull-left', method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
@@ -28,5 +27,5 @@
 
 <%= link_to new_character_path, class: "btn btn-primary" do %>
   <i class="icon-plus icon-white"></i>
-  New Character
+New Character
 <% end %>
