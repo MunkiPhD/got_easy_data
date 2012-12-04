@@ -1,5 +1,5 @@
 class Character < ActiveRecord::Base
-  attr_accessible :dob, :email, :is_male, :nickname, :title, :first_name, :last_name, :house_id
+  attr_accessible :dob, :email, :is_male, :nickname, :title, :first_name, :last_name, :house_id, :order_id
   belongs_to :house
   belongs_to :order
 

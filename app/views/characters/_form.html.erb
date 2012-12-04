@@ -43,6 +43,10 @@
     <%= f.label :house %>
     <%= f.collection_select :house_id, @houses, :id, :name, prompt: "Select a House" %>
   </div>
+  <div class="field">
+    Is this character in an order?
+    <%= f.collection_select :order_id, Order.all, :id, :name, prompt: "Select a Order" %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

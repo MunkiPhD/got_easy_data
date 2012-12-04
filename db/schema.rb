@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121204031836) do
+ActiveRecord::Schema.define(:version => 20121204041121) do
 
   create_table "characters", :force => true do |t|
     t.date     "dob",                          :null => false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20121204031836) do
     t.datetime "updated_at",                   :null => false
     t.string   "first_name", :default => "",   :null => false
     t.string   "last_name",  :default => "",   :null => false
+    t.integer  "order_id"
   end
 
   add_index "characters", ["first_name"], :name => "index_characters_on_first_name"

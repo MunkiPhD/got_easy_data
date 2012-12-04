@@ -1,13 +1,19 @@
-<p>
-  <b>Name:</b>
-  <%= @order.name %>
-</p>
+<h2><%= @order.name %></h2>
 
 <p>
-  <b>Motto:</b>
-  <%= @order.motto %>
+<em><%= @order.motto %></em>
 </p>
 
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @characters.each do |character| %>
+    <tr>
+    <td><%= link_to character.full_name, character %></td>
+  </tr>
+  <% end %>
+</table>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
