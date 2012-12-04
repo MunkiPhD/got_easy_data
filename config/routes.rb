@@ -1,4 +1,13 @@
 GotEasyData::Application.routes.draw do
+  resources :orders
+
+
+  resources :houses
+
+
+  resources :characters
+
+
   root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
