@@ -14,7 +14,7 @@
     <td><%= link_to character.full_name, character %></td>
     <td><%= character.title %></td>
     <td><%= character.nickname %></td>
-    <td><%= link_to character.house.name, character.house %></td>
+    <td><%= link_to(character.house.name, character.house) unless character.house.blank? %></td>
     <td><%= link_to(character.order.name, character.order) unless character.order.blank? %></td>
     <td style="width:78px;">
       <%= link_to raw('<i class="icon-pencil"></i>'), edit_character_path(character), class: 'btn btn-small pull-left' %>

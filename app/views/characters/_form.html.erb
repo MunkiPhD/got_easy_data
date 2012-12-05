@@ -42,6 +42,7 @@
   <div class="field">
     <%= f.label :house %>
     <%= f.collection_select :house_id, @houses, :id, :name, prompt: "Select a House" %>
+    Don't see the house? <%= link_to "Add it", "#add_house_modal", remote: url_for(House.new), role: "button", class: "btn", :'data-toggle'=>"modal" %> 
   </div>
   <div class="field">
     Is this character in an order?
@@ -51,3 +52,4 @@
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+<%= render "houses/modal" %>

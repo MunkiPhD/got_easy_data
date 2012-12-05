@@ -1,0 +1,44 @@
+<!-- Modal -->
+<div id="add_house_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <% @house = House.new %>
+    <%= form_for(@house, remote: true) do |f| %>
+      <% if @house.errors.any? %>
+      <div id="error_explanation">
+      <h2><%= pluralize(@house.errors.count, "error") %> prohibited this house from being saved:</h2>
+
+      <ul>
+        <% @house.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :motto %><br />
+      <%= f.text_field :motto %>
+    </div>
+    <div class="field">
+      <%= f.label :sigil %><br />
+      <%= f.text_field :sigil %>
+    </div>
+    <div class="field">
+      <%= f.label :seat %><br />
+      <%= f.text_field :seat %>
+    </div>
+  <% end %>  
+</div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Create House</button>
+  </div>
+</div>

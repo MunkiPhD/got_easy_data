@@ -81,4 +81,11 @@ class HousesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def get_houses
+    @houses = House.select([:id, :name]).all
+    respond_to do |format|
+      format.json { render json: @houses.to_json }
+    end
+  end
 end
