@@ -45,7 +45,7 @@ class HousesController < ApplicationController
 
     respond_to do |format|
       if @house.save
-        format.html { redirect_to @house, notice: 'House was successfully created.' }
+        format.html { redirect_to houses_path, success: 'House was successfully created.' }
         format.json { render json: @house, status: :created, location: @house }
       else
         format.html { render action: "new" }

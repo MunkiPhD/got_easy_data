@@ -48,6 +48,6 @@
     <%= f.collection_select :order_id, Order.all, :id, :name, prompt: "Select a Order" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
