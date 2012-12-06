@@ -1,4 +1,4 @@
-<%= form_for(@character) do |f| %>
+<%= form_for(@character, :html => { class:""}) do |f| %>
   <% if @character.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:</h2>
@@ -14,8 +14,6 @@
   <div class="field">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
@@ -28,8 +26,7 @@
     <%= f.text_field :title, placeholder: "e.g. \"Lord of Winterfell\"" %>
   </div>
   <div class="field">
-    <%= f.label :dob %><br />
-    <%= f.date_select :dob %>
+    Date of Birth (estimated)<br/><%= f.date_select :dob %>
   </div>
   <div class="field">
     <%= f.label :is_male %>
@@ -42,14 +39,18 @@
   <div class="field">
     <%= f.label :house %>
     <%= f.collection_select :house_id, @houses, :id, :name, prompt: "Select a House" %>
-    Don't see the house? <%= link_to "Add it", "#add_house_modal", remote: url_for(House.new), role: "button", class: "btn", :'data-toggle'=>"modal" %> 
+    <%= link_to "Add a house", "#add_house_modal", remote: url_for(House.new), role: "button", class: "btn", :'data-toggle'=>"modal" %> 
   </div>
   <div class="field">
     Is this character in an order?
-    <%= f.collection_select :order_id, Order.all, :id, :name, prompt: "Select a Order" %>
+    <%= f.collection_select :order_id, Order.all, :id, :name, prompt: "None" %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
 <%= render "houses/modal" %>
+
+<script type="text/javascript">
+  FocusFormsFirstInput('new_character'); 
+</script>
