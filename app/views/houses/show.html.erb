@@ -10,12 +10,12 @@
 
 <p>
   <b>Seat:</b>
-  <%= @house.seat %>
+  <%= link_to @house.castle.name, @house.castle %>
 </p>
 
 <table class="table table-striped">
   <tr>
-    <th>Name</th>
+    <th>Members</th>
   </tr>
   <% @characters.each do |character| %>
     <tr>

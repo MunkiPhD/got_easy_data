@@ -1,0 +1,24 @@
+<%= form_for(@castle) do |f| %>
+  <% if @castle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@castle.errors.count, "error") %> prohibited this castle from being saved:</h2>
+
+      <ul>
+      <% @castle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    Ruined? <%= f.check_box :ruined %>
+  </div>
+  <div class="actions">
+    <%= f.submit class:"btn btn-primary" %>
+  </div>
+<% end %>

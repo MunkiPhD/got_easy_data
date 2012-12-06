@@ -1,13 +1,9 @@
 GotEasyData::Application.routes.draw do
-  match "houses/get_houses" => "houses#get_houses"
+  resources :castles
   resources :orders
-
-
   resources :houses
-
-
+  match "houses/get_houses" => "houses#get_houses"
   resources :characters
-
   root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

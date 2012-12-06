@@ -16,7 +16,7 @@
     <td><%= house.name %></td>
     <td><%= house.motto %></td>
     <td><%= house.sigil %></td>
-    <td><%= house.seat %></td>
+    <td><%= link_to house.castle.name unless house.castle.blank? %></td>
     <td><%= link_to 'Show', house %></td>
     <td><%= link_to 'Edit', edit_house_path(house) %></td>
     <td><%= link_to raw('<i class="icon-remove"></i>'), house, class: 'btn btn-small close pull-left', method: :delete, data: { confirm: 'Are you sure?' } %></td>

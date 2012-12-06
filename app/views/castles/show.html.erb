@@ -1,0 +1,10 @@
+<h2><%= @castle.name %></h2>
+<p>Ruined: <%= @castle.ruined %></p>
+<% unless @castle.house.blank? %>
+  Seated by: <%= link_to @castle.house.name, @castle.house %>
+<% end %>
+
+<div>
+<%= link_to 'Edit', edit_castle_path(@castle) %> |
+<%= link_to 'Back', castles_path %>
+</div>

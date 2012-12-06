@@ -31,10 +31,11 @@
       <%= f.label :sigil %><br />
       <%= f.text_field :sigil %>
     </div>
-    <div class="field">
-      <%= f.label :seat %><br />
-      <%= f.text_field :seat %>
-    </div>
+  <div class="field">
+    <%= f.label : %>
+    <%= f.collection_select :castle_id, Castle.all, :id, :name, prompt: "Select a Castle" %>
+    <%= link_to "Add a house", "#add_house_modal", remote: url_for(House.new), role: "button", class: "btn", :'data-toggle'=>"modal" %> 
+  </div>
   <% end %>  
 </div>
   <div class="modal-footer">

@@ -1,0 +1,24 @@
+<h1>Listing castles</h1>
+
+<table class="table table-striped sortable">
+  <tr>
+    <th>Name</th>
+    <th>Seated By</th>
+    <th>Ruined</th>
+    <th></th>
+  </tr>
+
+<% @castles.each do |castle| %>
+  <tr>
+    <td><%= link_to castle.name, castle %></td>
+    <td><%= link_to castle.house.name, castle.house unless castle.house.blank? %></td>
+    <td><%= castle.ruined ? "Yes" : "No" %></td>
+    <td><%= link_to 'Edit', edit_castle_path(castle) %></td>
+    <td><%= link_to 'Destroy', castle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Castle', new_castle_path %>

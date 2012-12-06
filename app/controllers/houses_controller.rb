@@ -26,6 +26,7 @@ class HousesController < ApplicationController
   # GET /houses/new.json
   def new
     @house = House.new
+    @castles = Castle.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class HousesController < ApplicationController
   # GET /houses/1/edit
   def edit
     @house = House.find(params[:id])
+    @castles = Castle.all
   end
 
   # POST /houses

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121204041121) do
+ActiveRecord::Schema.define(:version => 20121206033324) do
+
+  create_table "castles", :force => true do |t|
+    t.string   "name",                          :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "ruined",     :default => false, :null => false
+  end
+
+  add_index "castles", ["name"], :name => "index_castles_on_name"
 
   create_table "characters", :force => true do |t|
     t.date     "dob",                          :null => false
@@ -31,12 +40,12 @@ ActiveRecord::Schema.define(:version => 20121204041121) do
   add_index "characters", ["last_name"], :name => "index_characters_on_last_name"
 
   create_table "houses", :force => true do |t|
-    t.string   "name",       :null => false
+    t.string   "name",                      :null => false
     t.string   "motto"
-    t.string   "sigil",      :null => false
-    t.string   "seat"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "sigil",                     :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "castle_id",  :default => 1, :null => false
   end
 
   create_table "orders", :force => true do |t|
