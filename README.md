@@ -8,9 +8,10 @@ As a fan of the series and always looking for data to use in my testing environm
 
 
 ```
- git clone https://github.com/MunkiPhD/got_easy_data
+ git clone https://github.com/MunkiPhD/got_easy_data.git
  cd got_easy_data
  bundle install
+ rake db:migrate
  rails server
 ```
 **Enjoy!**
