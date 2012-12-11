@@ -26,9 +26,11 @@
   <div class="field">
     <%= f.label :castle %>
     <%= f.collection_select :castle_id, @castles, :id, :name, prompt: "Select a Castle" %>
-    <%= link_to "Add a house", "#add_house_modal", remote: url_for(House.new), role: "button", class: "btn", :'data-toggle'=>"modal" %> 
+    <%= link_to "Add a castle", "#add_castle_modal", remote: url_for(Castle.new), role: "button", class: "btn", :'data-toggle'=>"modal" %> 
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<%= render "castles/modal" %>

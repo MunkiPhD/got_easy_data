@@ -6,7 +6,7 @@ class CastlesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @castles }
+      format.json { render json: @castles.to_json }
     end
   end
 

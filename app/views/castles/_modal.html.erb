@@ -1,0 +1,35 @@
+<!-- Modal -->
+<div id="add_castle_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Add Castle</h3>
+  </div>
+  <div class="modal-body">
+    <% @castle = Castle.new %>
+    <%= form_for(@castle, remote: true) do |f| %>
+      <% if @castle.errors.any? %>
+      <div id="error_explanation">
+      <h2><%= pluralize(@castle.errors.count, "error") %> prohibited this castle from being saved:</h2>
+
+      <ul>
+        <% @castle.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      Ruined? <%= f.check_box :ruined %>
+    </div>
+  <% end %>  
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Create House</button>
+  </div>
+</div>
