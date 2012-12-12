@@ -26,6 +26,7 @@ class CharactersController < ApplicationController
   def new
     @character = Character.new
     @houses = House.select([:name, :id]).all
+    @parent = Character.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +38,7 @@ class CharactersController < ApplicationController
   def edit
     @character = Character.find(params[:id])
     @houses = House.select([:name, :id]).all
+    @parent = Character.all
   end
 
   # POST /characters
@@ -59,6 +61,20 @@ class CharactersController < ApplicationController
   # PUT /characters/1.json
   def update
     @character = Character.find(params[:id])
+    @father = Character.find(params[:relationship][:character_id])
+
+    unless @father.blank?
+      @character.build_father(@father)
+=begin
+      relationship = Relationship.new
+      relationship.relation_id = @father.id
+      relationship.character_id = @character.id
+      relationship.relation_type = 'father'
+      relationship.save
+=end
+      flash[:info] = @character.father.inspect 
+    end
+
 
     respond_to do |format|
       if @character.update_attributes(params[:character])

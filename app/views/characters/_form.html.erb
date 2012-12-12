@@ -45,6 +45,10 @@
     <%= f.collection_select :order_id, Order.all, :id, :name, prompt: "None" %>
     &nbsp;What order does this character belong to?
   </div>
+  <div class="field">
+      <%= collection_select :relationship, :character_id, @parent, :id, :full_name %>
+    &nbsp;Father
+  </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>

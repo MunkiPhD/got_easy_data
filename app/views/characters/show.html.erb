@@ -25,6 +25,15 @@
   <%= link_to @character.house.name, @character.house %>
 </p>
 
+<p>
+  <b>Father</b>
+  <%= @character.inspect%>
+  <br/><hr/>
+  <% Relationship.all do |r| %>
+ <%= r %>
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %>
