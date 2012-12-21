@@ -1,0 +1,269 @@
+
+---
+castles:
+  columns:
+  - id
+  - name
+  - ruined
+  records: 
+  - - 1
+    - The Shadow Tower
+    - false
+  - - 2
+    - Castle Black
+    - false
+  - - 3
+    - Eastwatch by the Sea
+    - false
+  - - 4
+    - Summerhall
+    - true
+  - - 5
+    - Last Hearth
+    - false
+  - - 6
+    - Karhold
+    - false
+  - - 7
+    - Deepwood Motte
+    - false
+  - - 8
+    - The Dreadfort
+    - false
+  - - 9
+    - Winterfall
+    - false
+  - - 10
+    - Torrhen's Square
+    - false
+  - - 11
+    - Ramsgate
+    - false
+  - - 12
+    - Barrowtown
+    - false
+  - - 13
+    - Moat Cailin
+    - false
+  - - 14
+    - White Harbor
+    - false
+  - - 15
+    - Oldcastle
+    - false
+  - - 16
+    - Widow's Watch
+    - false
+  - - 17
+    - Flint's Finger
+    - false
+  - - 18
+    - The Twins
+    - false
+  - - 19
+    - Seagard
+    - false
+  - - 20
+    - Pyke
+    - false
+  - - 21
+    - The Eyrie
+    - false
+  - - 22
+    - Bloody Gate
+    - false
+  - - 23
+    - Coldwater
+    - false
+  - - 24
+    - Strongsong
+    - false
+  - - 25
+    - Longbow Hall
+    - false
+  - - 26
+    - Oldstones
+    - true
+  - - 27
+    - Banefort
+    - false
+  - - 29
+    - Ironoaks
+    - false
+  - - 30
+    - Redfort
+    - false
+  - - 31
+    - Old Anchor
+    - false
+  - - 32
+    - Runestone
+    - false
+  - - 34
+    - Wickenden
+    - false
+  - - 36
+    - Riverrun
+    - false
+  - - 37
+    - The Crag
+    - false
+  - - 38
+    - Ashemark
+    - false
+  - - 39
+    - Faircastle
+    - false
+  - - 40
+    - Feastfires
+    - false
+  - - 41
+    - Casterly Rock
+    - false
+  - - 42
+    - Hornvale
+    - false
+  - - 43
+    - Deep Den
+    - false
+  - - 44
+    - Acorn Hall
+    - false
+  - - 45
+    - Harrenhal
+    - false
+  - - 46
+    - Driftmark
+    - false
+  - - 47
+    - Dragonstone
+    - false
+  - - 48
+    - Silverhall
+    - false
+  - - 49
+    - Rosby
+    - false
+  - - 50
+    - Tumbleton
+    - false
+  - - 51
+    - Golden Grove
+    - false
+  - - 52
+    - Crakehall
+    - false
+  - - 53
+    - Old Oak
+    - false
+  - - 54
+    - Longtable
+    - false
+  - - 55
+    - Cider Hall
+    - false
+  - - 56
+    - Felwood
+    - false
+  - - 57
+    - Bronzegate
+    - false
+  - - 58
+    - Storm's End
+    - false
+  - - 59
+    - Evenfall Hall
+    - false
+  - - 60
+    - Griffin's Roost
+    - false
+  - - 61
+    - Rain House
+    - false
+  - - 62
+    - Mistwood
+    - false
+  - - 63
+    - Stonehelm
+    - false
+  - - 64
+    - Nightsong
+    - false
+  - - 65
+    - Blackhaven
+    - false
+  - - 66
+    - Wyl
+    - false
+  - - 67
+    - Ghaston Grey
+    - false
+  - - 68
+    - Kingsgrave
+    - false
+  - - 69
+    - Highgarden
+    - false
+  - - 70
+    - Brightwater Keep
+    - false
+  - - 71
+    - Bandallon
+    - false
+  - - 72
+    - Three Towers
+    - false
+  - - 73
+    - Sunhouse
+    - false
+  - - 74
+    - Starfall
+    - false
+  - - 75
+    - High Hermitage
+    - false
+  - - 76
+    - Sandstone
+    - false
+  - - 77
+    - Hellholt
+    - false
+  - - 78
+    - Yronwood
+    - false
+  - - 79
+    - The Tor
+    - false
+  - - 80
+    - Vaith
+    - false
+  - - 81
+    - Godsgrace
+    - false
+  - - 82
+    - Salt Shore
+    - false
+  - - 83
+    - Ghost Hill
+    - false
+  - - 84
+    - Lemonwood
+    - false
+  - - 85
+    - Sunspear
+    - false
+  - - 86
+    - Ten Towers
+    - false
+  - - 87
+    - Cornfield
+    - false
+  - - 88
+    - Golden Tooth
+    - false
+  - - 89
+    - Pinkmaiden
+    - false
+  - - 90
+    - Silverhill
+    - false

@@ -6,7 +6,7 @@ class CreateHouses < ActiveRecord::Migration
       t.string :sigil, :null => false
       t.string :seat
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

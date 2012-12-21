@@ -9,7 +9,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.string :nickname
       t.references :house, :null => false
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

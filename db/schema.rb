@@ -14,45 +14,38 @@
 ActiveRecord::Schema.define(:version => 20121206033324) do
 
   create_table "castles", :force => true do |t|
-    t.string   "name",                          :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.boolean  "ruined",     :default => false, :null => false
+    t.string  "name",                      :null => false
+    t.boolean "ruined", :default => false, :null => false
   end
 
   add_index "castles", ["name"], :name => "index_castles_on_name"
 
   create_table "characters", :force => true do |t|
-    t.date     "dob",                          :null => false
-    t.boolean  "is_male",    :default => true
-    t.string   "email",                        :null => false
-    t.string   "title"
-    t.string   "nickname"
-    t.integer  "house_id",                     :null => false
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-    t.string   "first_name", :default => "",   :null => false
-    t.string   "last_name",  :default => "",   :null => false
-    t.integer  "order_id"
+    t.string  "name",                         :null => false
+    t.date    "dob",                          :null => false
+    t.boolean "is_male",    :default => true
+    t.string  "email",                        :null => false
+    t.string  "title"
+    t.string  "nickname"
+    t.integer "house_id",                     :null => false
+    t.string  "first_name", :default => "",   :null => false
+    t.string  "last_name",  :default => "",   :null => false
+    t.integer "order_id"
   end
 
   add_index "characters", ["first_name"], :name => "index_characters_on_first_name"
   add_index "characters", ["last_name"], :name => "index_characters_on_last_name"
 
   create_table "houses", :force => true do |t|
-    t.string   "name",                      :null => false
-    t.string   "motto"
-    t.string   "sigil",                     :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.integer  "castle_id",  :default => 1, :null => false
+    t.string  "name",                     :null => false
+    t.string  "motto"
+    t.string  "sigil",                    :null => false
+    t.integer "castle_id", :default => 1, :null => false
   end
 
   create_table "orders", :force => true do |t|
-    t.string   "name",       :null => false
-    t.string   "motto"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string "name",  :null => false
+    t.string "motto"
   end
 
 end

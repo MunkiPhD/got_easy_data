@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :name, :null => false
       t.string :motto
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end
